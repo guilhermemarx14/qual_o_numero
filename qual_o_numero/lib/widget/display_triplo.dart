@@ -25,15 +25,16 @@ class DisplayTriplo extends StatelessWidget {
     numDisplay3 = numero;
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        numDisplay1 == -1 ? SizedBox() : Display(num: numDisplay1), //centena
-        SizedBox(
-          width: 15,
+        numDisplay1 == -1 ? Container() : Display(num: numDisplay1),
+        Padding(
+          padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+          child: numDisplay2 == -1
+              ? Container()
+              : Display(num: numDisplay2), //dezena
         ),
-        numDisplay2 == -1 ? SizedBox() : Display(num: numDisplay2), //dezena
-        SizedBox(
-          width: 15,
-        ),
+
         Display(num: numDisplay3), //unidade
       ],
     );

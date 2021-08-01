@@ -37,37 +37,59 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: rosa,
         title: Text('Qual é o número?'),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Teste',
-                  style: TextStyle(fontSize: 20),
+          Container(),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(''),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Teste',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
-              ),
-              DisplayTriplo(numero: 120),
-              SizedBox(
-                height: 100,
-              )
-            ],
+                DisplayTriplo(numero: 3),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width - 130,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    cursorColor: rosa,
+                    decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 2, color: rosa),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 2, color: rosa),
+                      ),
+                      border: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 2, color: rosa),
+                      ),
+                    ),
+                    maxLength: 3,
+                  ),
+                ),
+                RaisedButton(
+                  hoverColor: rosa,
+                  onPressed: () {},
+                  child: Text('ENVIAR'),
+                )
+              ],
+            ),
           ),
         ],
-      ),
-      bottomSheet: TextField(
-        showCursor: true,
-        maxLength: 3,
-        decoration: new InputDecoration(
-          labelText: "Digite o  palpite",
-          focusColor: Colors.pinkAccent,
-          fillColor: Colors.pinkAccent,
-          hoverColor: Colors.pinkAccent,
-        ),
-        keyboardType: TextInputType.number,
       ),
     );
   }
