@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:qual_o_numero/constants.dart';
 import 'package:qual_o_numero/resposta_json.dart';
 import 'package:qual_o_numero/widget/display.dart';
 import 'package:qual_o_numero/widget/display_triplo.dart';
@@ -15,37 +17,57 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Qual é o número?'),
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: rosa,
+        title: Text('Qual é o número?'),
       ),
-      body: Center(
-        child: DisplayTriplo(numero: 30),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Teste',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              DisplayTriplo(numero: 120),
+              SizedBox(
+                height: 100,
+              )
+            ],
+          ),
+        ],
+      ),
+      bottomSheet: TextField(
+        showCursor: true,
+        maxLength: 3,
+        decoration: new InputDecoration(
+          labelText: "Digite o  palpite",
+          focusColor: Colors.pinkAccent,
+          fillColor: Colors.pinkAccent,
+          hoverColor: Colors.pinkAccent,
+        ),
+        keyboardType: TextInputType.number,
       ),
     );
   }

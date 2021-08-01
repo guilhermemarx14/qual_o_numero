@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qual_o_numero/constants.dart';
 
 class Display extends StatelessWidget {
   const Display({Key? key, required this.num}) : super(key: key);
@@ -17,8 +18,8 @@ class Display extends StatelessWidget {
   // 9 -> 1, 2, 3, 4, 6, 7
   @override
   Widget build(BuildContext context) {
-    Color apagada = Colors.black12;
-    Color acesa = Colors.pinkAccent;
+    Color apagada = apagado;
+    Color acesa = rosa;
     var display1 = [0, 1, 3, 4, 5, 6, 7, 8, 9];
     var display2 = [0, 1, 2, 3, 4, 7, 8, 9];
     var display3 = [0, 2, 3, 5, 6, 7, 8, 9];
