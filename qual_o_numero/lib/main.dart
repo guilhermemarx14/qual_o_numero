@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qual_o_numero/widget/display.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(),
+        child: Display(num: 9),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
