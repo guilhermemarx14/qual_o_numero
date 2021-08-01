@@ -17,8 +17,8 @@ class Display extends StatelessWidget {
   // 9 -> 1, 2, 3, 4, 6, 7
   @override
   Widget build(BuildContext context) {
-    Color apagada = Colors.grey;
-    Color acesa = Colors.pink;
+    Color apagada = Colors.black12;
+    Color acesa = Colors.pinkAccent;
     var display1 = [0, 1, 3, 4, 5, 6, 7, 8, 9];
     var display2 = [0, 1, 2, 3, 4, 7, 8, 9];
     var display3 = [0, 2, 3, 5, 6, 7, 8, 9];
@@ -31,7 +31,7 @@ class Display extends StatelessWidget {
       children: [
         Column(
           children: [
-            SizedBox(height: 5),
+            SizedBox(height: 4),
             SegmentoVertical(
                 color: display4.contains(num) ? acesa : apagada), // 4
             SegmentoVertical(
@@ -42,17 +42,17 @@ class Display extends StatelessWidget {
           children: [
             SegmentoHorizontal(
                 color: display3.contains(num) ? acesa : apagada), // 3
-            SizedBox(height: 70, width: 50),
+            SizedBox(height: 30, width: 50),
             SegmentoHorizontal(
                 color: display7.contains(num) ? acesa : apagada), // 7
-            SizedBox(height: 70, width: 50),
+            SizedBox(height: 30, width: 50),
             SegmentoHorizontal(
                 color: display6.contains(num) ? acesa : apagada), // 6
           ],
         ),
         Column(
           children: [
-            SizedBox(height: 5),
+            SizedBox(height: 4),
             SegmentoVertical(
                 color: display2.contains(num) ? acesa : apagada), // 2
             SegmentoVertical(
@@ -73,11 +73,11 @@ class SegmentoHorizontal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(1.0),
       child: Container(
         color: color,
         height: 8,
-        width: 80,
+        width: 46,
       ),
     );
   }
@@ -89,10 +89,10 @@ class SegmentoVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(1.0),
       child: Container(
         color: color,
-        height: 80,
+        height: 40,
         width: 8,
       ),
     );

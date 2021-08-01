@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qual_o_numero/resposta_json.dart';
 import 'package:qual_o_numero/widget/display.dart';
+import 'package:qual_o_numero/widget/display_triplo.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Qual é o número?'),
     );
   }
 }
@@ -43,12 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Display(num: 9),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: DisplayTriplo(numero: 30),
       ),
     );
   }
